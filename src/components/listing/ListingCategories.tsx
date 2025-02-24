@@ -1,7 +1,6 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Tag } from "lucide-react";
 
 // Map category IDs to their names
 const CATEGORY_MAP: Record<number, string> = {

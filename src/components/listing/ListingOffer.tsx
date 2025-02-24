@@ -6,14 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Check } from "lucide-react";
 
 interface ListingOfferProps {
-  listingPrice: number;
   onSubmitOffer: (amount: number) => void;
 }
 
-export const ListingOffer = ({
-  listingPrice,
-  onSubmitOffer,
-}: ListingOfferProps) => {
+export const ListingOffer = ({ onSubmitOffer }: ListingOfferProps) => {
   const [offerAmount, setOfferAmount] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 

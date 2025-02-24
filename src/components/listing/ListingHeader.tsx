@@ -69,7 +69,7 @@ export const ListingHeader = ({
         <p className="text-4xl font-bold text-orange-500">
           ${price.toLocaleString()}
         </p>
-        <ListingOffer listingPrice={price} onSubmitOffer={onSubmitOffer} />
+        <ListingOffer onSubmitOffer={onSubmitOffer} />
       </div>
       <div className="text-sm text-gray-500">
         <Calendar className="h-4 w-4 inline mr-1" />

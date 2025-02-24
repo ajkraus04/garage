@@ -119,14 +119,13 @@ async function getListing(id: string) {
 }
 
 interface ListingPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export async function generateMetadata({ params }: ListingPageProps) {
   try {
-    const listing = await getListing(params.id);
+    const resolvedParams = await params;
+    const listing = await getListing(resolvedParams.id);
     return {
       title: `${listing.title} | Garage`,
       description: listing.description,
@@ -145,7 +144,8 @@ export async function generateMetadata({ params }: ListingPageProps) {
 }
 
 export default async function ListingPage({ params }: ListingPageProps) {
-  const listing = await getListing(params.id);
+  const resolvedParams = await params;
+  const listing = await getListing(resolvedParams.id);
 
   return (
     <div className="min-h-screen bg-white">
