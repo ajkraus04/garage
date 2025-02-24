@@ -65,7 +65,7 @@ function transformListingData(apiResponse: ApiResponse) {
     specifications: {
       make: listing.itemBrand,
       year: listing.itemAge,
-      mileage: listing.mileage,
+      mileage: `${listing.mileage} miles`,
       length: `${listing.itemLength} inches`,
       height: `${listing.itemHeight} inches`,
       weight: `${listing.itemWeight} lbs`,

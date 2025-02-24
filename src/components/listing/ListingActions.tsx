@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Truck, Shield, Calculator, FileText } from "lucide-react";
+import { ListingActionButton } from "./ListingActionButton";
 
 interface ListingActionsProps {
   onFreightQuote: () => void;
@@ -16,51 +16,39 @@ export const ListingActions = ({
   onFinancingQuote,
   onGetInvoice,
 }: ListingActionsProps) => {
+  const actions = [
+    {
+      icon: Truck,
+      label: "Instant freight quote",
+      onClick: onFreightQuote,
+    },
+    {
+      icon: Shield,
+      label: "Warranty calculator",
+      onClick: onWarrantyCalculate,
+    },
+    {
+      icon: Calculator,
+      label: "Financing quote",
+      onClick: onFinancingQuote,
+    },
+    {
+      icon: FileText,
+      label: "Get PDF invoice",
+      onClick: onGetInvoice,
+    },
+  ];
+
   return (
     <div className="grid grid-cols-2 gap-4">
-      <Button
-        variant="outline"
-        className="h-auto py-6 px-4 flex flex-col items-center gap-3 border-2 shadow-sm hover:shadow-md hover:border-orange-500 hover:bg-orange-50 transition-all duration-200"
-        onClick={onFreightQuote}
-      >
-        <div className="p-2 rounded-full bg-orange-100">
-          <Truck className="h-6 w-6 text-orange-500" />
-        </div>
-        <span className="text-sm font-medium">Instant freight quote</span>
-      </Button>
-
-      <Button
-        variant="outline"
-        className="h-auto py-6 px-4 flex flex-col items-center gap-3 border-2 shadow-sm hover:shadow-md hover:border-orange-500 hover:bg-orange-50 transition-all duration-200"
-        onClick={onWarrantyCalculate}
-      >
-        <div className="p-2 rounded-full bg-orange-100">
-          <Shield className="h-6 w-6 text-orange-500" />
-        </div>
-        <span className="text-sm font-medium">Warranty calculator</span>
-      </Button>
-
-      <Button
-        variant="outline"
-        className="h-auto py-6 px-4 flex flex-col items-center gap-3 border-2 shadow-sm hover:shadow-md hover:border-orange-500 hover:bg-orange-50 transition-all duration-200"
-        onClick={onFinancingQuote}
-      >
-        <div className="p-2 rounded-full bg-orange-100">
-          <Calculator className="h-6 w-6 text-orange-500" />
-        </div>
-        <span className="text-sm font-medium">Financing quote</span>
-      </Button>
-
-      <Button
-        variant="outline"
-        className="h-auto py-6 px-4 flex flex-col items-center gap-3 border-2 shadow-sm hover:shadow-md hover:border-orange-500 hover:bg-orange-50 transition-all duration-200"
-        onClick={onGetInvoice}
-      >
-        <div className="p-2 rounded-full bg-orange-100">
-          <FileText className="h-6 w-6 text-orange-500" />
-        </div>
-        <span className="text-sm font-medium">Get PDF invoice</span>
-      </Button>
+      {actions.map((action) => (
+        <ListingActionButton
+          key={action.label}
+          icon={action.icon}
+          label={action.label}
+          onClick={action.onClick}
+        />
+      ))}
     </div>
   );
 };
