@@ -8,7 +8,7 @@ export default function ListingNotFound() {
       <Header />
       <main className="container mx-auto px-4 py-6">
         <Link
-          href="/listings"
+          href="/listing"
           className="inline-flex items-center text-sm text-muted-foreground hover:text-orange-500 mb-6"
         >
           <ArrowLeft className="h-4 w-4 mr-1" />
