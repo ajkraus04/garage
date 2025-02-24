@@ -6,7 +6,31 @@ import { Tag } from "lucide-react";
 // Map category IDs to their names
 const CATEGORY_MAP: Record<number, string> = {
   1: "Engines and Pumpers",
+  2: "Ladders, Aerials, and Quints",
+  5: "Ambulances",
+  6: "Command Units",
+  7: "Brush Trucks and Minis",
+  8: "Tankers and Tenders",
+  9: "Other Apparatus",
+  10: "Helmets",
+  12: "Adapters and Valves",
+  13: "Fire Apparatus Parts",
+  14: "Radios and Electronics",
+  15: "SCBAs",
+  16: "Turnout Gear",
+  17: "Hand Tools",
+  19: "Nozzles",
+  20: "Hose",
+  21: "Other Equipment",
+  22: "Uniforms and Clothing",
+  23: "Boots",
+  25: "Firefighter Straps",
+  27: "EMS Equipment",
+  29: "Handlights",
+  30: "Scene Lighting",
+  31: "Wildland Vehicles",
   1001: "Fire Trucks",
+  1002: "Firefighting Equipment",
 };
 
 interface ListingCategoriesProps {
