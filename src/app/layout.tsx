@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Garage - Vehicle Marketplace",
-  description: "Find and sell vehicles in our marketplace",
+  title: "Garage",
+  description: "Find and sell used vehicles in our marketplace",
 };
 
 export default function RootLayout({
